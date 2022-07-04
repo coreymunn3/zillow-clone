@@ -1,6 +1,6 @@
 import Link from 'next/link';
-import Image from 'next/image';
-import { Flex, Box, Text, Button } from '@chakra-ui/react';
+import { Flex, Box, Text, Button, Image } from '@chakra-ui/react';
+import ImageWithSkeleton from '../ImageWithSkeleton';
 
 export const Banner = ({
   purpose,
@@ -14,7 +14,7 @@ export const Banner = ({
 }) => {
   return (
     <Flex justifyContent={'center'} alignItems='center' m='10'>
-      <Image src={imageUrl} width={500} height={300} />
+      <ImageWithSkeleton src={imageUrl} width={500} height={300} />
       <Box p={5}>
         <Text color={'gray.500'} fontSize='small' fontWeight='medium'>
           {purpose}
