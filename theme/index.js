@@ -4,8 +4,6 @@ import { extendTheme } from '@chakra-ui/react';
 // Foundational style overrides
 // Component style overrides
 
-console.log('image', Image);
-
 const overrides = {
   // global style overrides
   styles: {
@@ -16,6 +14,5 @@ const overrides = {
 };
 
 const theme = extendTheme(overrides);
-console.log(theme);
 
 export default theme;
