@@ -1,5 +1,5 @@
 import { Box, Flex } from '@chakra-ui/react';
-import { Banner } from '../components';
+import { Banner, Property } from '../components';
 import { fetchApi } from '../utils/fetchApi';
 
 export default function Home(props) {
@@ -17,6 +17,11 @@ export default function Home(props) {
         imageUrl='https://thumbor.forbes.com/thumbor/fit-in/900x510/https://www.forbes.com/advisor/wp-content/uploads/2021/08/download-23.jpg'
         buttonText='Explore Renting'
       />
+      <Flex flexWrap='wrap'>
+        {propertiesForRent.map((property) => (
+          <Property key={property.id} property={property} />
+        ))}
+      </Flex>
       <Banner
         purpose='BUY A HOME'
         title1='Find, Buy, Own your'
@@ -27,6 +32,11 @@ export default function Home(props) {
         imageUrl='https://thumbor.forbes.com/thumbor/fit-in/900x510/https://www.forbes.com/advisor/wp-content/uploads/2021/08/download-23.jpg'
         buttonText='Explore Buying'
       />
+      <Flex flexWrap='wrap'>
+        {propertiesForSale.map((property) => (
+          <Property key={property.id} property={property} />
+        ))}
+      </Flex>
     </Box>
   );
 }
@@ -45,8 +55,8 @@ export async function getStaticProps() {
 
   return {
     props: {
-      propertiesForSale,
-      propertiesForRent,
+      propertiesForSale: propertiesForSale.hits,
+      propertiesForRent: propertiesForRent.hits,
     },
   };
 }
