@@ -3,7 +3,6 @@ import { Banner, Property } from '../components';
 import { fetchApi } from '../utils/fetchApi';
 
 export default function Home(props) {
-  console.log(props);
   const { propertiesForRent, propertiesForSale } = props;
   return (
     <Box>
